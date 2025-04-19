@@ -1,0 +1,74 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Link compile_commands",
+      "type": "shell",
+      "options": {
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "command": "if exist build\\current rmdir /S /Q build\\current && mklink /D build\\current \"${command:cmake.buildDirectory}\"",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CMake: Configure",
+      "type": "cmake",
+      "command": "configure",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CMake: Build",
+      "type": "cmake",
+      "command": "build",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "CMake: Clean",
+      "type": "cmake",
+      "command": "clean",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CMake: Rebuild",
+      "dependsOn": [
+        "CMake: Clean",
+        "CMake: Configure",
+        "CMake: Build"
+      ],
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CMake: Delete Cache + Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S",
+        "${workspaceFolder}",
+        "-B",
+        "${command:cmake.buildDirectory}",
+        "-U",
+        "*"
+      ],
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "CMake: Test",
+      "type": "cmake",
+      "command": "test",
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}

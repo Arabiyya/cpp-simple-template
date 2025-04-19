@@ -1,0 +1,33 @@
+{
+  "cmake.configureOnOpen": true,
+  "cmake.options.advanced": {
+    "configurePreset": {
+      "statusBarVisibility": "visible",
+    },
+    "buildPreset": {
+      "statusBarVisibility": "visible",
+    },
+    "launch": {
+      "statusBarVisibility": "visible",
+    },
+    "preset": {
+      "statusBarVisibility": "visible",
+    },
+    "kit": {
+      "statusBarVisibility": "visible"
+    }
+  },
+  "cmake.useCMakePresets": "always",
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "files.associations": {
+    "**/CMakeLists.txt": "cmake",
+    "**/*.cmake": "cmake",
+    "**/CMakePresets.json": "jsonc",
+    "**/CMakeUserPresets.json": "jsonc",
+    "**/vcpkg.json": "jsonc"
+  },
+  "files.exclude": {
+    "**/build": true,
+    "**/install": true
+  },
+}

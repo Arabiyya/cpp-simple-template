@@ -1,0 +1,41 @@
+CompileFlags:
+  CompilationDatabase: build/current
+  Add:
+    - -std=c++20
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+    - -Wconversion
+    - -Wshadow
+    - -Wnon-virtual-dtor
+    - -Wold-style-cast
+    - -Wcast-align
+    - -Wunused
+    - -Woverloaded-virtual
+    - -Wconversion
+    - -Wsign-conversion
+    - -Wdouble-promotion
+    - -Wformat=2
+    - -Werror=format-security
+  Remove: -W*
+
+Diagnostics:
+  ClangTidy:
+    Add:
+      - modernize-*
+      - performance-*
+      - portability-*
+      - readability-*
+      - bugprone-*
+      - cppcoreguidelines-*
+    Remove:
+      - modernize-use-trailing-return-type
+      - readability-identifier-length
+      - readability-magic-numbers
+      - cppcoreguidelines-avoid-magic-numbers
+      
+  UnusedIncludes: Strict
+
+Index:
+  Background: Build
+  StandardLibrary: Yes

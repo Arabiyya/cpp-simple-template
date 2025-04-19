@@ -1,0 +1,38 @@
+# CMake build directories
+/build/
+/install/
+/out/
+/bin/
+/lib/
+
+/vcpkg_installed/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Compilation database (optional to ignore)
+compile_commands.json
+
+# VSCode files
+!.vscode/
+*.code-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+*.user
+*.suo
+*.vcxproj.user
+.idea/
+
+# Temporary files
+*.swp
+*.bak
+*.tmp
+*.log
